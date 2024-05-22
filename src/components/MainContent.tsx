@@ -11,11 +11,9 @@ import { BiSolidChevronRight } from 'react-icons/bi';
 import { useAppSelector } from '../store';
 import PostList from './PostList';
 import BoardList from './BoardList';
-import RegisterPage from './RegisterPage';
 import { Link, useParams } from 'react-router-dom';
 
 export default function MainContent() {
-  const isRegistering = useAppSelector((state) => state.nav.isRegistering);
   const currentBoard = useAppSelector((state) => state.nav.currentBoard);
   const authenticated = useAppSelector((state) => state.auth.authenticated);
   const { convoId } = useParams();
@@ -52,7 +50,6 @@ export default function MainContent() {
                 </BreadcrumbItem>
               )}
             </Breadcrumb>
-            {isRegistering && <RegisterPage />}
             {convoId ? <PostList /> : <BoardList />}
           </>
         )}

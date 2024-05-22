@@ -4,6 +4,7 @@ import { login } from '../store/slices/auth';
 import { setRegistering } from '../store/slices/nav';
 import { useAppDispatch, useAppSelector } from '../store';
 import { Button, Grid, Input, Spacer, Spinner, Text } from '@chakra-ui/react';
+import RegisterPage from './RegisterPage';
 
 export default function LoginForm() {
   const [userName, setUserName] = useState('');
@@ -62,6 +63,7 @@ export default function LoginForm() {
             <Button onClick={doLogin}>Login</Button>
           </Grid>
           <p>{errorMessage}</p>
+          {isRegistering && <RegisterPage />}
         </>
       )}
     </>
