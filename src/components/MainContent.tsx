@@ -44,7 +44,7 @@ export default function MainContent() {
                   </BreadcrumbLink>
                 </BreadcrumbItem>
               )}
-              {boardId && (
+              {(boardId && (location.pathname != '/Users')) && (
                 <BreadcrumbItem>
                   <BreadcrumbLink as={Link} to={currentBoard?.id?.toString()}>
                     {currentBoard?.name}

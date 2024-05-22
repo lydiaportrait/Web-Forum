@@ -146,8 +146,8 @@ export default function BoardList() {
             index={boardList.findIndex((board) => board.id == Number(boardId))}
           >
             {boardList.map((board) => (
-              <AccordionItem p={2}>
-                <Flex>
+              <AccordionItem>
+                <Flex p={2}>
                   <AccordionButton onClick={() => handleAccordionClick(board)}>
                     <Box minW="200px" as="span" flex="1" textAlign="left">
                       <Heading fontSize="2xl">{board.name}</Heading>
@@ -158,12 +158,12 @@ export default function BoardList() {
                   </AccordionButton>
                   <Spacer />
                   {isAdmin && (
-                    <Button minW="100px" onClick={() => handleEditWindow(board)}>
+                    <Button minW="100px" marginLeft={2} onClick={() => handleEditWindow(board)}>
                       edit
                     </Button>
                   )}
                   {isAdmin && (
-                    <Button minW="100px" onClick={() => handleBoardDelete(board)}>
+                    <Button minW="100px" marginLeft={2} onClick={() => handleBoardDelete(board)}>
                       delete
                     </Button>
                   )}
